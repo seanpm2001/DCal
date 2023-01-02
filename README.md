@@ -1,406 +1,493 @@
 
 ***
 
-# <projectName>
+# `*.dcal` format specification
 
-![{Project icon} This image failed to load. It may be due to the file not being reached, or a general error. Reload the page to fix a possible general error.](Image.svg)
+This file is under construction. It may not seem tidy at the moment. Subesequent updates will fix this.
 
-# By:
+## Description
 
-<!-- ![{Developer name} This image failed to load. It may be due to the file not being reached, or a general error. Reload the page to fix a possible general error.](Image2.svg) !-->
+🗓️📅️📆️ DCal is an advanced calendar format that adds significant amounts of customization and control to digital calendars. Inspired by the ICS format, and ProtonCalendar, along with real life calendars.
 
-## [Seanpm2001](https://github.com/seanpm2001/), [<developerName>](https://github.com/<developerName>/) Et; Al.
+## Notes
 
+- Not compatible with 8:3 file systems, so not compatible with Windows 3.1/Windows NT 3.51 and below. Nobody should be using these as their daily devices anyways, unless you are using a virtua machine
 
-### Top
+- This format is not specific to DCalendar, I am hoping to make this an open standard that will work in all modern calendar software.
 
-# `README.md`
+## Pronunciation
+
+Dcal pronunciation: Decal, although I have no rules on pronunciation, this is just the way I pronounce it
+
+## Structure sample alpha 1
+
+Alpha 1 build of the file structure.
+
+```xml
+<header>
+Cover font <set a font>
+Millennium font <set a font>
+Century font <set a font>
+Decade font <set a font>
+Year font <set a font>
+January font: <set a font>
+February font: <set a font>
+March font: <set a font>
+April font: <set a font>
+May font: <set a font>
+June font: <set a font>
+July font: <set a font>
+August font: <set a font>
+September font: <set a font>
+October font: <set a font>
+November font: <set a font>
+October font: <set a font>
+Y-M-D
+M-D-Y
+D-M-Y
+M-Y-D
+D-Y-M
+e.t.c
+Start on Saturday
+Start on Sunday
+Default view: day
+Default view: week
+Default view: month
+Default view: year
+Default view: decade
+Default view: century
+Default view: millennium (not yet available in some calendars)
+Enable images
+Enable videos
+Enable OS integration (such as, a specific event in the calendar can trigger an alarm to go off, etc.)
+Lighting (Light, Dark, System default)
+Enable page flipping animation
+Calendar type (Julian, Gregorian, Hebrew, Solar, etc.)
+<wikipedia-sample comment="For the supported calendar types, representing the year 2022">
+Gregorian calendar	2022
+MMXXII
+Ab urbe condita	2775
+Armenian calendar	1471
+ԹՎ ՌՆՀԱ
+Assyrian calendar	6772
+Baháʼí calendar	178–179
+Balinese saka calendar	1943–1944
+Bengali calendar	1429
+Berber calendar	2972
+British Regnal year	70 Eliz. 2 – 1 Cha. 3
+Buddhist calendar	2566
+Burmese calendar	1384
+Byzantine calendar	7530–7531
+Chinese calendar	辛丑年 (Metal Ox)
+4718 or 4658
+    — to —
+壬寅年 (Water Tiger)
+4719 or 4659
+Coptic calendar	1738–1739
+Discordian calendar	3188
+Ethiopian calendar	2014–2015
+Hebrew calendar	5782–5783
+Hindu calendars	
+ - Vikram Samvat	2078–2079
+ - Shaka Samvat	1943–1944
+ - Kali Yuga	5122–5123
+Holocene calendar	12022
+Igbo calendar	1022–1023
+Iranian calendar	1400–1401
+Islamic calendar	1443–1444
+Japanese calendar	Reiwa 4
+(令和４年)
+Javanese calendar	1955–1956
+Juche calendar	111
+Julian calendar	Gregorian minus 13 days
+Korean calendar	4355
+Minguo calendar	ROC 111
+民國111年
+Nanakshahi calendar	554
+Thai solar calendar	2565
+Tibetan calendar	阴金牛年
+(female Iron-Ox)
+2148 or 1767 or 995
+    — to —
+阳水虎年
+(male Water-Tiger)
+2149 or 1768 or 996
+Unix time	1640995200 – 1672531199
+5 	May 	31 
+</wikipedia-sample>
+Yes, I do plan to support the Juche calendar, along with other calendars of this magnitude, I will be supporting all calendar formats. People may commonly set their calendar to Juche as a joke, or for historical/research/other purposes, but it will remains an option that won't be removed nonetheless. It isn't that hard to support.
+</header>
+```
+
+The calendar can be different depending on the defined calendar type. The following example will use the Gregorian calendar
+
+```xml
+<cover>
+<image>image for once-a-millennium Calendar cover</image>
+<image>image for once-a-century Calendar cover</image>
+<image>image for once-a-decade Calendar cover</image>
+<image>image for yearly Calendar cover</image>
+</cover>
+
+<!-- Supported image formats: Any, or: PNG, SVG, JPG, JPEG, JIF, GIF, JFIF, JP2, JPE, WebP, NetP, HEIF, HEIC, HEIFS, HEICS, TIF, TIFF, BMP, DIB, PSD, etc. !-->
+
+<image>image for January</image>
+January
+1-31
+
+<image>image for February</image>
+February
+1-28/29
+
+<image>image for March</image>
+March
+1-31
+
+<image>image for April</image>
+March
+1-30
+
+<image>image for May</image>
+March
+1-31
+
+<image>image for June</image>
+March
+1-30
+
+<image>image for July</image>
+March
+1-31
+
+<image>image for August</image>
+March
+1-31
+
+<image>image for September</image>
+March
+1-30
+
+<image>image for October</image>
+March
+1-31
+
+<image>image for November</image>
+March
+1-30
+
+<image>image for December</image>
+March
+1-31
+```
 
 ***
 
-## Read this article in a different language
+## DCal metadata
 
-**Sorted by:** `A-Z`
-
-[Sorting options unavailable](https://github.com/<developerName>/<repoName>)
-
-( [af Afrikaans](/.github/README_AF.md) Afrikaans | [sq Shqiptare](/.github/README_SQ.md) Albanian | [am አማርኛ](/.github/README_AM.md) Amharic | [ar عربى](/.github/README_AR.md) Arabic | [hy հայերեն](/.github/README_HY.md) Armenian | [az Azərbaycan dili](/.github/README_AZ.md) Azerbaijani | [eu Euskara](/.github/README_EU.md) Basque | [be Беларуская](/.github/README_BE.md) Belarusian | [bn বাংলা](/.github/README_BN.md) Bengali | [bs Bosanski](/.github/README_BS.md) Bosnian | [bg български](/.github/README_BG.md) Bulgarian | [ca Català](/.github/README_CA.md) Catalan | [ceb Sugbuanon](/.github/README_CEB.md) Cebuano | [ny Chichewa](/.github/README_NY.md) Chichewa | [zh-CN 简体中文](/.github/README_ZH-CN.md) Chinese (Simplified) | [zh-t 中國傳統的）](/.github/README_ZH-T.md) Chinese (Traditional) | [co Corsu](/.github/README_CO.md) Corsican | [hr Hrvatski](/.github/README_HR.md) Croatian | [cs čeština](/.github/README_CS.md) Czech | [da dansk](README_DA.md) Danish | [nl Nederlands](/.github/README_NL.md) Dutch | [**en-us English**](/.github/README.md) English |  [EO Esperanto](/.github/README_EO.md) Esperanto | [et Eestlane](/.github/README_ET.md) Estonian | [tl Pilipino](/.github/README_TL.md) Filipino | [fi Suomalainen](/.github/README_FI.md) Finnish |  [fr français](/.github/README_FR.md) French | [fy Frysk](/.github/README_FY.md) Frisian | [gl Galego](/.github/README_GL.md) Galician | [ka ქართველი](/.github/README_KA) Georgian | [de Deutsch](/.github/README_DE.md) German | [el Ελληνικά](/.github/README_EL.md) Greek | [gu ગુજરાતી](/.github/README_GU.md) Gujarati | [ht Kreyòl ayisyen](/.github/README_HT.md) Haitian Creole | [ha Hausa](/.github/README_HA.md) Hausa | [haw Ōlelo Hawaiʻi](/.github/README_HAW.md) Hawaiian | [he עִברִית](/.github/README_HE.md) Hebrew | [hi हिन्दी](/.github/README_HI.md) Hindi | [hmn Hmong](/.github/README_HMN.md) Hmong | [hu Magyar](/.github/README_HU.md) Hungarian | [is Íslenska](/.github/README_IS.md) Icelandic | [ig Igbo](/.github/README_IG.md) Igbo | [id bahasa Indonesia](/.github/README_ID.md) Icelandic | [ga Gaeilge](/.github/README_GA.md) Irish | [it Italiana/Italiano](/.github/README_IT.md) | [ja 日本語](/.github/README_JA.md) Japanese | [jw Wong jawa](/.github/README_JW.md) Javanese | [kn ಕನ್ನಡ](/.github/README_KN.md) Kannada | [kk Қазақ](/.github/README_KK.md) Kazakh | [km ខ្មែរ](/.github/README_KM.md) Khmer | [rw Kinyarwanda](/.github/README_RW.md) Kinyarwanda | [ko-south 韓國語](/.github/README_KO_SOUTH.md) Korean (South) | [ko-north 문화어](README_KO_NORTH.md) Korean (North) (NOT YET TRANSLATED) | [ku Kurdî](/.github/README_KU.md) Kurdish (Kurmanji) | [ky Кыргызча](/.github/README_KY.md) Kyrgyz | [lo ລາວ](/.github/README_LO.md) Lao | [la Latine](/.github/README_LA.md) Latin | [lt Lietuvis](/.github/README_LT.md) Lithuanian | [lb Lëtzebuergesch](/.github/README_LB.md) Luxembourgish | [mk Македонски](/.github/README_MK.md) Macedonian | [mg Malagasy](/.github/README_MG.md) Malagasy | [ms Bahasa Melayu](/.github/README_MS.md) Malay | [ml മലയാളം](/.github/README_ML.md) Malayalam | [mt Malti](/.github/README_MT.md) Maltese | [mi Maori](/.github/README_MI.md) Maori | [mr मराठी](/.github/README_MR.md) Marathi | [mn Монгол](/.github/README_MN.md) Mongolian | [my မြန်မာ](/.github/README_MY.md) Myanmar (Burmese) | [ne नेपाली](/.github/README_NE.md) Nepali | [no norsk](/.github/README_NO.md) Norwegian | [or ଓଡିଆ (ଓଡିଆ)](/.github/README_OR.md) Odia (Oriya) | [ps پښتو](/.github/README_PS.md) Pashto | [fa فارسی](/.github/README_FA.md) |Persian  [pl polski](/.github/README_PL.md) Polish | [pt português](/.github/README_PT.md) Portuguese | [pa ਪੰਜਾਬੀ](/.github/README_PA.md) Punjabi | No languages available that start with the letter Q | [ro Română](/.github/README_RO.md) Romanian | [ru русский](/.github/README_RU.md) Russian | [sm Faasamoa](/.github/README_SM.md) Samoan | [gd Gàidhlig na h-Alba](/.github/README_GD.md) Scots Gaelic | [sr Српски](/.github/README_SR.md) Serbian | [st Sesotho](/.github/README_ST.md) Sesotho | [sn Shona](/.github/README_SN.md) Shona | [sd سنڌي](/.github/README_SD.md) Sindhi | [si සිංහල](/.github/README_SI.md) Sinhala | [sk Slovák](/.github/README_SK.md) Slovak | [sl Slovenščina](/.github/README_SL.md) Slovenian | [so Soomaali](/.github/README_SO.md) Somali | [[es en español](/.github/README_ES.md) Spanish | [su Sundanis](/.github/README_SU.md) Sundanese | [sw Kiswahili](/.github/README_SW.md) Swahili | [sv Svenska](/.github/README_SV.md) Swedish | [tg Тоҷикӣ](/.github/README_TG.md) Tajik | [ta தமிழ்](/.github/README_TA.md) Tamil | [tt Татар](/.github/README_TT.md) Tatar | [te తెలుగు](/.github/README_TE.md) Telugu | [th ไทย](/.github/README_TH.md) Thai | [tr Türk](/.github/README_TR.md) Turkish | [tk Türkmenler](/.github/README_TK.md) Turkmen | [uk Український](/.github/README_UK.md) Ukrainian | [ur اردو](/.github/README_UR.md) Urdu | [ug ئۇيغۇر](/.github/README_UG.md) Uyghur | [uz O'zbek](/.github/README_UZ.md) Uzbek | [vi Tiếng Việt](/.github/README_VI.md) Vietnamese | [cy Cymraeg](/.github/README_CY.md) Welsh | [xh isiXhosa](/.github/README_XH.md) Xhosa | [yi יידיש](/.github/README_YI.md) Yiddish | [yo Yoruba](/.github/README_YO.md) Yoruba | [zu Zulu](/.github/README_ZU.md) Zulu ) Available in 110 languages (108 when not counting English and North Korean, as North Korean has not been translated yet [Read about it here](/OldVersions/Korean(North)/README.md))
-
-Translations in languages other than English are machine translated and are not yet accurate. No errors have been fixed yet as of March 21st 2021. Please report translation errors [here](https://github.com/<developerName>/<repoName>/issues/). Make sure to backup your correction with sources and guide me, as I don't know languages other than English well (I plan on getting a translator eventually) please cite [wiktionary](https://en.wiktionary.org) and other sources in your report. Failing to do so will result in a rejection of the correction being published.
-
-Note: due to limitations with GitHub's interpretation of markdown (and pretty much every other web-based interpretation of markdown) clicking these links will redirect you to a separate file on a separate page that isn't the intended page. You will be redirected to the [.github folder](/.github/) of this project, where the README translations are hosted.
-
-Translations are currently done with Bing translate and DeepL. Support for Google Translate translations is coming to a close due to privacy concerns.
-
-***
-
-# Index
-
-[00.0 - Top](#Top)
-
-> [00.1 - Title](#<projectName>)
-
-> [00.2 - Read this article in a different language](#Read-this-article-in-a-different-language)
-
-> [00.3 - Index](#Index)
-
-[01.0 - Description](#RepositoryName)
-
-[02.0 - About](#About)
-
-[03.0 - Wiki](#Wiki)
-
-[04.0 - History](#History)
-
-> [04.1 - Pre-history](#Pre-history)
-
-> [04.2 - Alpha History](#Alpha-history)
-
-> [04.3 - Beta History](#Beta-history)
-
-> [04.4 - Modern History](#Modern-history)
-
-[05.0 - Copying](#Copying)
-
-[06.0 - Credits](#Credits)
-
-[07.0 - Installation](#Installation)
-
-[08.0 - Version history](#Version-history)
-
-[09.0 - Version history](#Version-history)
-
-[10.0 - Software status](#Software-status)
-
-[11.0 - Sponsor info](#Sponsor-info)
-
-[12.0 - Contributers](#Contributers)
-
-[13.0 - Issues](#Issues)
-
-> [13.1 - Current issues](#Current-issues)
-
-> [13.2 - Past issues](#Past-issues)
-
-> [13.3 - Past pull requests](#Past-pull-requests)
-
-> [13.4 - Active pull requests](#Active-pull-requests)
-
-[14.0 - Resources](#Resources)
-
-[15.0 - Contributing](#Contributing)
-
-[16.0 - About README](#About-README)
-
-[17.0 - README Version history](#README-version-history)
-
-[18.0 - Footer](#You-have-reached-the-end-of-the-README-file)
-
-> [18.9 - End of file](#EOF)
+- Email associations
+- Location associations
+- Descriptions
+- Labels
+- Categories
+- Actions {
+- 1. Trigger a notification
+- 2. Trigger an alarm
+- 3. Trigger a popup }
+- Events
 
 ***
 
-# <repoName>
-<repo_description>
+## Event Timer
+
+Set a timer for the duration of an event.
+
+- Can't go any lower than 5 seconds
+- By 5 seconds
+- By 10 seconds
+- By 15 seconds
+- By 20 seconds
+- By 30 seconds
+- By minute
+- By 2.5 minutes
+- By 5 minutes
+- By 10 minutes
+- By 15 minutes
+- By 20 minutes
+- By 30 minutes
+- By 60 minutes
+- By 90 minutes
+- By 120 minutes
+- By 150 minutes
+- By 180 minutes
+- By 210 minutes
+- By 240 minutes
+- By 270 minutes
+- By 300 minutes
+- By 330 minutes
+- By 360 minutes
+- By 390 minutes
+- By 420 minutes
+- By 450 minutes
+- By 480 minutes
+- By 510 minutes
+- By 540 minutes
+- By 570 minutes
+- By 600 minutes
+- By 630 minutes
+- By 660 minutes
+- By 690 minutes
+- By 720 minutes
+- By 750 minutes
+- By 780 minutes
+- By 810 minutes
+- By 840 minutes
+- By 870 minutes
+- By 900 minutes
+- By 930 minutes
+- By 960 minutes
+- By 990 minutes
+- By 1020 minutes
+- By 1050 minutes
+- By 1080 minutes
+- By 1110 minutes
+- By 1140 minutes
+- By 1170 minutes
+- By 1200 minutes
+- By 1230 minutes
+- By 1260 minutes
+- By 1290 minutes
+- By 1320 minutes
+- By 1350 minutes
+- By 1380 minutes
+- By 1410 minutes
+- By 1440 minutes (24 hours)
+- All day (a separate category than - By 1440 minutes)
 
 ***
 
-## About
+## Demo calendars
 
-See above. <extendedRepoDescription>
+NTS: For demo purposes: create the following sample calendars:
+
+#### Ab urbe condita calendar
+
+- Not enough time to add right now
+
+#### Armenian Calendar
+
+- Not enough time to add right now
+
+#### Assyrian Calendar
+
+- Not enough time to add right now
+
+#### Baháʼí calendar
+
+- Not enough time to add right now
+
+#### Balinese saka calendar
+
+- Not enough time to add right now
+
+#### Bengali calendar
+
+- Not enough time to add right now
+
+#### Berber calendar
+
+- Not enough time to add right now
+
+#### British Regnal year
+
+- Not enough time to add right now
+
+#### Buddhist calendar
+
+- Not enough time to add right now
+
+#### Burmese calendar
+
+- Not enough time to add right now
+
+#### Byzantine calendar
+
+- Not enough time to add right now
+
+#### Chinese Calendar
+
+- Not enough time to add right now
+
+#### Coptic calendar
+
+- Not enough time to add right now
+
+#### Discordian calendar
+
+- Not enough time to add right now
+
+#### Ethiopian calendar
+
+- Not enough time to add right now
+
+#### Gregorian
+
+Gregorian_Simple_Sample1Demo1.dcal
+
+> A simple Gregorian calendar with a range of 1000 CE to 2024 CE
+
+Gregorian_Simple_Sample2Demo1.dcal
+
+> A simple Gregorian calendar with a range of 10000 BCE to 2024 CE
+
+Gregorian_Simple_Sample3Demo1.dcal
+
+> A simple Gregorian calendar with a range of 10000 BCE to 2024 CE
+
+> Also includes a calendar cover, and an image for each month.
+
+#### Hebrew calendar
+
+- Not enough time to add right now
+
+#### Hindu Calendar: Vikram Samvat
+
+- Not enough time to add right now
+
+#### Hindu Calendar: Shaka Samvat
+
+- Not enough time to add right now
+
+#### Hindu Calendar: Kali Yuga
+
+- Not enough time to add right now
+
+#### Holocene calendar
+
+- Not enough time to add right now
+
+#### Igbo calendar
+
+- Not enough time to add right now
+
+#### Iranian calendar
+
+- Not enough time to add right now
+
+#### Islamic calendar
+
+- Not enough time to add right now
+
+#### Japanese calendar
+
+- Not enough time to add right now
+
+#### Javanese calendar
+
+- Not enough time to add right now
+
+#### Julian
+
+- Not enough time to add right now
+
+#### Juche
+
+Juche_Simple_Sample1Demo1.dcal
+
+> North Korean calendar (full range) from Juche 1 (Gregorian: 1912) to Juche 112 (Gregorian: 2023)
+
+Juche_Simple_Sample2Demo1.dcal
+
+> North Korean calendar (full range) from Juche 1 (Gregorian: 1912) to Juche 112 (Gregorian: 2023)
+
+> Also includes a calendar cover, and an image for each month.
+
+Juche calendar	111
+
+#### Julian calendar
+
+- Not enough time to add right now
+
+#### Korean calendar
+
+- Not enough time to add right now
+
+#### Minguo calendar
+
+- Not enough time to add right now
+
+#### Nanakshahi calendar
+
+- Not enough time to add right now
+
+#### Thai solar calendar
+
+- Not enough time to add right now
+
+#### Tibetan calendar
+
+- Not enough time to add right now
+
+#### UNIX time calendar
+
+- Not enough time to add right now
 
 ***
 
-## Wiki
+## Import/Export tool
 
-[Click/tap here to view this projects Wiki](https://github.com/<developerName>/<repoName>/wiki)
-
-If the project has been forked, the Wiki was likely removed. Luckily, I include an embedded version. You can view it [here](/External/ProjectWiki/).
-
-***
-
-## History
-
-Write about this projects history here.
-
-### Pre-history
-
-No pre-history to show for this project.
-
-### Alpha history
-
-No Alpha history to show for this project.
-
-### Beta history
-
-No Beta history to show for this project.
-
-### Modern history
-
-No Modern history to show for this project.
+- Import ICS file
+- Export to ICS file (will strip out many features if they are in use)
+- Export as DCal
+- Export as DCalB (bundle)
 
 ***
 
-## Copying
+## Macros
 
-View the copying license for this project [here](/COPYING) (if you haven't built the project yet with the makefile, here is the original link: [COPYINGL](/COPYINGL)
+Macros help automate the configuration, organization, and maintenance of a calendar.
 
-Please note that you also have to follow the rules of the GNU General Public License v3 (GPL3) which you can view [here](/LICENSE.txt)
+Macros can be written in:
 
-***
+- VBScript
+- VB.NET
+- Other language (not yet defined)
 
-## Credits
-
-View the credits file for this project and see the people who got together to make this project by [clicking/tapping here](/CREDITS)
-
-***
-
-## Installation
-
-View the installation instructions file for this project [here](/INSTALL)
-
-Requirements: Read the instructions for more info, and get the latest up-to-date instructions [here](https://gist.github.com/seanpm2001/745564a46186888e829fdeb9cda584de)
+Macro files carry the `.dcalm` file extension.
 
 ***
 
-## Sponsor info
+## Bundles
 
-![SponsorButton.png](/SponsorButton.png)
-
-You can sponsor this project if you like, but please specify what you want to donate to. [See the funds you can donate to here](https://github.com/seanpm2001/Sponsor-info/tree/main/For-sponsors/)
-
-You can view other sponsor info [here](https://github.com/seanpm2001/Sponsor-info/)
-
-Try it out! The sponsor button is right up next to the watch/unwatch button.
+You can bundle multiple calendars into one with  a bundle file. Bundle files carry the `.dcalb` file extension.
 
 ***
 
-## Version history
+## Sample macros
 
-**Version history currently unavailable**
+Included macros
 
-**No other versions listed**
-
-***
-
-## Software status
-
-All of my works are free some restrictions. DRM (**D**igital **R**estrictions **M**anagement) is not present in any of my works.
-
-![DRM-free_label.en.svg](/DRM-free_label.en.svg)
-
-This sticker is supported by the Free Software Foundation. I never intend to include DRM in my works.
-
-I am using the abbreviation "Digital Restrictions Management" instead of the more known "Digital Rights Management" as the common way of addressing it is false, there are no rights with DRM. The spelling "Digital Restrictions Management" is more accurate, and is supported by [Richard M. Stallman (RMS)](https://en.wikipedia.org/wiki/Richard_Stallman) and the [Free Software Foundation (FSF)](https://en.wikipedia.org/wiki/Free_Software_Foundation)
-
-This section is used to raise awareness for the problems with DRM, and also to protest it. DRM is defective by design and is a major threat to all computer users and software freedom.
-
-Image credit: [defectivebydesign.org/drm-free/...](https://www.defectivebydesign.org/drm-free/how-to-use-label/)
+- Birthdays.dcalm
+- Is-Was.dcalm
+- Daily-tasks.dcalm
+- American-Holidays.dcalm
+- American-History.dcalm
+- Religious-Holidays_Christianity.dcalm
+- Religious-Holidays_Hinduism.dcalm
+- Religious-Holidays_Judaism.dcalm
+- Religious-Holidays_Islam.dcalm
+- More coming soon
 
 ***
 
-## Contributers
+## Planned platforms
 
-Currently, I am the only contributer. Contributing is allowed, as long as you follow the rules of the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
-
-> * 1. [seanpm2001](https://github.com/seanpm2001/) - x commits (As of Yr, DoW, Month, DoM, at ##:## a/pm)
-
-> * 2. No other contributers.
-
-***
-
-## Issues
-
-### Current issues
-
-* None at the moment
-
-* No other current issues
-
-If the repository has been forked, issues likely have been removed. Luckily I keep an archive of certain images [here](/.github/Issues/)
-
-[Read the privacy policy on issue archival here](/.github/Issues/README.md)
-
-**TL;DR**
-
-I archive my own issues. Your issue won't be archived unless you request it to be archived.
-
-### Past issues
-
-* None at the moment
-
-* No other past issues
-
-If the repository has been forked, issues likely have been removed. Luckily I keep an archive of certain images [here](/.github/Issues/)
-
-[Read the privacy policy on issue archival here](/.github/Issues/README.md)
-
-**TL;DR**
-
-I archive my own issues. Your issue won't be archived unless you request it to be archived.
-
-### Past pull requests
-
-* None at the moment
-
-* No other past pull requests
-
-If the repository has been forked, issues likely have been removed. Luckily I keep an archive of certain images [here](/.github/Issues/)
-
-[Read the privacy policy on issue archival here](/.github/Issues/README.md)
-
-**TL;DR**
-
-I archive my own issues. Your issue won't be archived unless you request it to be archived.
-
-### Active pull requests
-
-* None at the moment
-
-* No other active pull requests
-
-If the repository has been forked, issues likely have been removed. Luckily I keep an archive of certain images [here](/.github/Issues/)
-
-[Read the privacy policy on issue archival here](/.github/Issues/README.md)
-
-**TL;DR**
-
-I archive my own issues. Your issue won't be archived unless you request it to be archived.
+- [x] DCalendar
+- [ ] ProtonMail
+- [ ] Outlook
+- [ ] Other
 
 ***
 
-## Resources
-
-Here are some other resources for this project:
-
-[Project language file A](PROJECT_LANG_1.<fileExtensionForProgrammingLanguage>)
-
-[Join the discussion on GitHub](https://github.com/<developerName>/<repoName>/discussions)
-
-No other resources at the moment.
-
-***
-
-## Contributing
-
-Contributing is allowed for this project, as long as you follow the rules of the `CONTRIBUTING.md` file.
-
-[Click/tap here to view the contributing rules for this project](/CONTRIBUTING.md)
-
-***
-
-## About README
-
-**File type:** `Markdown Document (*.md *.mkd *.markdown)`
-
-**File version:** `0.1.6 (Monday, August 23rd 2021 at 6:37 pm)`
-
-**Line count (including blank lines and compiler line):** `0,407`
-
-***
-
-## README version history
-
-Version 0.1 (Sunday, March 21st 2021 at 7:50 pm)
-
-> Changes:
-
-> * Started the file
-
-> * Added the title section
-
-> * Added the index
-
-> * Added the about section
-
-> * Added the Wiki section
-
-> * Added the version history section
-
-> * Added the issues section.
-
-> * Added the past issues section
-
-> * Added the past pull requests section
-
-> * Added the active pull requests section
-
-> * Added the contributors section
-
-> * Added the contributing section
-
-> * Added the about README section
-
-> * Added the README version history section
-
-> * Added the resources section
-
-> * Added a software status section, with a DRM free sticker and message
-
-> * Added the sponsor info section
-
-**ITERATION 5**
-
-> * Updated the title section
-
-> * Updated the index
-
-> * Added the history section
-
-> * Updated the file info section
-
-> * Updated the file history section
-
-**ITERATION 6**
-
-> * Updated the title section
-
-> * Fixed and update template links
-
-> * Updated the index
-
-> * Added the copying section
-
-> * Added the credits section
-
-> * Added the installation section
-
-> * Updated the resources section
-
-> * Updated the contributors section
-
-> * Added the technical notes section
-
-> * Updated the footer
-
-> * Updated the file info section
-
-> * Updated the file history section
-
-> * No other changes in version 0.1
-
-Version 1 (Coming soon)
-
-> Changes:
-
-> * Coming soon
-
-> * No other changes in version 1
-
-Version 2 (Coming soon)
-
-> Changes:
-
-> * Coming soon
-
-> * No other changes in version 2
-
-***
-
-### You have reached the end of the README file
-
-( [Back to top](#Top) | [Exit to GitHub](https://github.com) | [Exit to Bing](https://www.bing.com/) | [Exit to DuckDuckGo](https://duckduckgo.com/) | [Exit to Ecosia](https://www.ecosia.org) )
-
-### EOF
+**File version:** `1 (2023, Sunday, January 1st at 5:40 pm PST)`
 
 ***
