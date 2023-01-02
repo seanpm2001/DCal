@@ -1,0 +1,1 @@
+🗓️📅️📆️ DCal is an advanced calendar format that adds significant amounts of customization and control to digital calendars. Inspired by the ICS format, and ProtonCalendar, along with real life calendars.
